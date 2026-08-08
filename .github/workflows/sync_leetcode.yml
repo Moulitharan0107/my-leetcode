@@ -1,8 +1,8 @@
 name: Sync Leetcode Past Progress
 on:
-  workflow_dispatch: # Allows you to run this manually whenever you want
+  workflow_dispatch:
   schedule:
-    - cron: "0 8 * * 6" # Automatically double-checks for updates every Saturday
+    - cron: "0 8 * * 6"
 
 jobs:
   build:
@@ -14,5 +14,3 @@ jobs:
           github-token: ${{ github.token }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          verbose: true
-          commit-header: '[LeetCode Sync History]'
