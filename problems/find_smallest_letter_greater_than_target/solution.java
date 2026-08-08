@@ -6,13 +6,10 @@ class Solution {
             int mid=(l+r)/2;
             if(letters[mid]>target){
                 max=letters[mid];
-                r--;
-                if(l==r){
-                    return max;
-                }
+                r=mid-1;
             }
             else{
-                l++;
+                l=mid+1;;
             }
         }
         return max;
